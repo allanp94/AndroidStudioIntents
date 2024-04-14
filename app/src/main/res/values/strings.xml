@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Assignment 2</string>
     <string name="title_activity_msechallenges">MSEChallengesActivity</string>
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="title_activity_capture_image">CaptureImageActivity</string>
     <string-array name="challenges_array">
         <item>Device fragmentation</item>
         <item>OS fragmentation</item>

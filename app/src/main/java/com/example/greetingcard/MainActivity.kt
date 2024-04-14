@@ -3,6 +3,7 @@ package com.example.greetingcard
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
@@ -36,8 +37,8 @@ class MainActivity : ComponentActivity() {
                     val implicitIntent = Intent(Intent.ACTION_SEND).apply{
                         type = "text/plain"
                         putExtra(Intent.EXTRA_TEXT, resources.getStringArray(R.array.challenges_array))
-//                        putStringArrayListExtra("ChallengesArray", resources.getStringArray(R.array.challenges_array))
                     }
+                    val cameraActivityIntent = Intent(this, CaptureImageActivity::class.java)
                     Column( modifier = Modifier
                         .fillMaxSize()
                         .padding(24.dp),
@@ -74,6 +75,21 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Text(
                                 text = "Start Activity Implicitly",
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        Button(
+                            onClick = {
+                                try{
+                                    startActivity(cameraActivityIntent)
+                                } catch (e: ActivityNotFoundException){
+                                    e.printStackTrace()
+                                }
+                            },
+                            Modifier.padding(12.dp)
+                        ) {
+                            Text(
+                                text = "View Image Activity",
                                 textAlign = TextAlign.Center
                             )
                         }
