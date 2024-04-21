@@ -27,7 +27,6 @@ import org.junit.Before
 
 private const val BASIC_SAMPLE_PACKAGE = "com.example.greetingcard"
 private const val LAUNCH_TIMEOUT = 5000L
-private const val STRING_TO_BE_TYPED = "UiAutomator"
 
 @RunWith(AndroidJUnit4::class)
 @SdkSuppress(minSdkVersion = 18)
